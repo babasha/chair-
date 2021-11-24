@@ -1,0 +1,1953 @@
+$color-Black: #000000
+$color-White: #FFFFFF
+$color-Background: #F5F1EF
+$color-lilac: #7A7E8F
+$color-Complementary: #FC936F
+$color-light-lilac: #A8A8A8
+$color-border: #C5C6CB
+$color-hover: #63687E
+$color-active: #4C5165
+$color-unactive: #A1A1A1
+
+@font-face
+  font-family: 'Montserrat'
+  src: local('Montserrat'),
+  url(../fonts/Montserrat/Montserrat-Light.ttf)
+
+  font-family: 'MontserratRegular'
+  src: local('MontserratRegular'),
+  url(../fonts/Montserrat/Montserrat-Regular.ttf)
+
+  font-family: 'MontserratSemiBold'
+  src: local('MontserratSemiBold'),
+  url(../fonts/Montserrat/Montserrat-SemiBold.ttf)
+
+  font-family: 'MontserratBlack'
+  src: local('MontserratBlack'),
+  url(../fonts/Montserrat/Montserrat-Black.ttf)
+
+  font-family: 'MontserratBold'
+  src: local('MontserratBold'),
+  url(../fonts/montserrat/Montserrat-Bold.ttf)
+
+  font-family: 'MontserratExtraBold'
+  src: local('MontserratExtraBold'),
+  url(../fonts/Montserrat/Montserrat-ExtraBold.ttf)
+
+  font-family: 'MontserratExtraLight'
+  src: local('MontserratExtraLight'),
+  url(../fonts/Montserrat/Montserrat-ExtraLight.ttf)
+
+  font-family: 'MontserratMedium'
+  src: local('MontserratMedium'),
+  url(../fonts/Montserrat/Montserrat-Medium.ttf)
+
+.visually-hidden:not(:focus):not(:active), input[type="checkbox"].visually-hidden, input[type="radio"].visually-hidden
+  position: absolute
+
+  width: 1px
+  height: 1px
+  margin: -1px
+  border: 0
+  padding: 0
+
+  white-space: nowrap
+
+  clip-path: insert(100%)
+  clip: rect(0 0 0 0)
+  overflow: hidden
+
+*
+  padding: 0
+  margin: 0
+  border: 0
+
+*:root
+  font-family: 'Montserrat', sans-serif
+
+inert>*           /////    *    /////
+
+inert>*
+  opacity: 1
+  pointer-events: none
+
+// If JavaScript kicks in, undo the opacity.
+// It might look too disabled in many browsers.
+inert disabled
+  opacity: 1
+
+button:focus-visible, input:focus-visible, a:focus-visible
+  border: 2px solid $color-Complementary
+  border-radius: 6px
+  transition-duration: 500ms
+
+*, *:before, *:after
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+a:focus, a:active, :focus, :active,            /////    *    /////
+  outline: none
+
+nav, header, aside
+  display: block
+
+html, body
+  height: 100%
+  width: 100%
+  font-size: 100%
+  line-height: 1
+  font-size: 14px
+  -ms-text-size-adjust: 100%
+  -moz-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+body
+  background-color: $color-Background
+
+input, textarea, button
+  font-family: inherit
+
+input[type=text], input[type=email], input[type=tel], textarea
+  -moz-appearance: none
+  -webkit-appearance: none
+  appearance: none
+
+input::-ms-clear
+  display: none
+
+button
+  cursor: pointer
+  background-color: transparent
+
+button::-moz-focus-inner
+  padding: 0
+  border: 0
+
+a
+  text-decoration: none
+  &:visited
+    text-decoration: none
+  &:hover
+    text-decoration: none
+
+ul li
+  list-style: none
+
+img
+  max-width: 100%
+  height: auto
+  vertical-align: top
+
+h1, h2, h3, h4, h5, h6
+  font-size: inherit
+  font-weight: inherit
+
+.number
+  color: $color-Complementary
+
+/* ----------------Buttons------------------- */
+
+.button-1
+  font-family: 'Exo 2', sans-serif
+  font-size: 18px
+  font-weight: 600
+  color: $color-White
+  display: -webkit-inline-box
+  display: -webkit-inline-flex
+  display: -moz-inline-box
+  display: -ms-inline-flexbox
+  display: inline-flex
+  position: relative
+  max-height: 73px
+  padding: 22px 24px
+  z-index: 2
+  & span
+    width: 100%
+    height: 100%
+    position: relative
+    z-index: 2
+    white-space: nowrap
+  &::after
+    content: ''
+    z-index: 1
+    position: absolute
+    top: 9px
+    left: 10px
+    width: 100%
+    height: 100%
+    background: $color-lilac
+    -webkit-border-radius: 8px
+    -moz-border-radius: 8px
+    border-radius: 8px
+  &::before
+    content: ''
+    z-index: 2
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 100%
+    height: 100%
+    -webkit-border-radius: 8px
+    -moz-border-radius: 8px
+    border-radius: 8px
+    border: 1px solid $color-Black
+  &:hover::after
+    background-color: $color-hover
+  &:active::after
+    background-color: $color-active
+
+.button-2
+  font-family: 'Exo 2', sans-serif
+  color: $color-Black
+  font-weight: 600
+  display: -webkit-inline-box
+  display: -webkit-inline-flex
+  display: -moz-inline-box
+  display: -ms-inline-flexbox
+  display: flex
+  justify-content: center
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -moz-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  white-space: nowrap
+  font-size: 14px
+  font-size: 18px
+  &::after, &::before
+    content: ''
+    width: 22px
+    height: 2px
+    background-color: $color-border
+  &::after
+    margin-left: 10px
+  &::before
+    margin-right: 10px
+  &:hover
+    color: $color-border
+  &:active
+    color: $color-Black
+  &:active::after, &:active::before
+    background-color: $color-Black
+  & button
+    font-weight: 600
+    font-size: 0.9rem
+    font-size: 16px
+
+.button-3
+  border: 1px solid $color-Black
+  -webkit-border-radius: 8px
+  -moz-border-radius: 8px
+  border-radius: 8px
+  color: $color-Black
+  padding: 22px 65px
+  white-space: nowrap
+  display: inline
+  font-weight: 600
+  font-size: 16px
+  line-height: 21px
+  padding: 18px 70px
+  &:hover
+    color: $color-White
+    border: 1px solid $color-hover
+    background-color: $color-hover
+  &:active
+    color: $color-White
+    background-color: $color-active
+
+
+/* ----------------Tabs-nav------------------- */
+
+.tabs-nav
+  display: flex
+  justify-content: center
+  margin-bottom: 40px
+  margin-top: 40px
+  &__item
+    font-size: 16px
+    color: #C8C9CD
+    height: 102px
+    padding: 0px 45px
+    -webkit-border-radius: 30px
+    -moz-border-radius: 30px
+    border-radius: 30px
+    display: -webkit-inline-box
+    display: -webkit-inline-flex
+    display: -moz-inline-box
+    display: -ms-inline-flexbox
+    display: inline-flex
+    -webkit-box-align: center
+    -webkit-align-items: center
+    -moz-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    position: relative
+    &:not(:last-child)::after
+      content: ''
+      position: absolute
+      top: 18px
+      right: 0px
+      height: 66px
+      width: 1px
+      background-color: $color-border
+    &.is-active            /////    *    /////
+      background: #7A7E8F
+      color: $color-White
+      border-radius: 30px
+      padding: 0px 68px
+      background-color: $color-lilac
+      & svg
+        color: $color-White
+        fill: $color-White
+  & svg
+    fill: $color-light-lilac
+
+.input
+  padding: 17px 24px
+  font-style: normal
+  font-weight: 600
+  font-size: 16px
+  color: $color-Black
+  border: 1px solid $color-lilac
+  -webkit-border-radius: 8px
+  -moz-border-radius: 8px
+  border-radius: 8px
+  &::-webkit-input-placeholder, &:-moz-placeholder,&::-moz-placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder, &::placeholder
+    color: $color-border
+
+
+.header .container
+  display: -webkit-box
+  display: -webkit-flex
+  display: -moz-box
+  display: -ms-flexbox
+  display: flex
+
+/* ----------------Header------------------- */
+
+.header
+  &__wrapper
+    margin: 16px 9px
+    margin-bottom: 15px
+    min-width: 294px
+    padding-right: 2%
+    height: 40px
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    background-color: $color-Background
+  &__logo
+    width: 125px
+    text-align: center
+    & svg
+      width: 167.66px
+      height: 55px
+    & #logo-small
+      display: none
+    & #logo-big
+      display: inline
+  &__menu
+    display: none
+    -webkit-box-flex: 0
+    -webkit-flex: 0 0 100%
+    -moz-box-flex: 0
+    -ms-flex: 0 0 100%
+    flex: 0 0 100%
+    max-width: 100%
+  & .contacts
+    padding-left: 40px
+    border-left: 1px solid $color-border
+    height: 100%
+    &.phone-link, .work-time
+      font-weight: 500
+
+.contacts .work-time
+  margin-top: 5px
+  text-transform: uppercase
+
+/* ---------------------------Burger--------------------------- */
+
+.burger
+  width: 24px
+  height: 20px
+  top: -15px
+  left: 273px
+  z-index: 120
+  cursor: pointer
+  &__pseudo
+    position: relative
+  & #burger
+    opacity: 1
+    visibility: visible
+  & #close
+    opacity: 0
+    visibility: hidden
+  &._open #burger
+    opacity: 0
+    visibility: hidden
+  &._open #close
+    opacity: 1
+    visibility: visible
+
+
+.menu__item
+  &.menu__item
+    padding-bottom: 16px
+    cursor: pointer
+    white-space: nowrap
+  &-link
+    color: $color-Black
+    font-weight: 500
+  &._active
+    color: $color-active
+  &:hover
+    -webkit-transform: scale(1.1)
+    -moz-transform: scale(1.1)
+    -ms-transform: scale(1.1)
+    -o-transform: scale(1.1)
+    transform: scale(1.1)
+    color: $color-light-lilac
+
+/* -----------------------Footer ------------------------*/
+
+.footer
+  margin-top: 57px
+  background-color: $color-White
+  padding-top: 65px
+  &__wrapper :last-child            /////    *    /////
+    grid-column-start: 1
+    grid-column-end: 3
+  &__menu
+    padding-left: 16px
+    padding-right: 150px
+  &__offer
+    -webkit-box-flex: 0
+    -webkit-flex: 0 1 50%
+    -moz-box-flex: 0
+    -ms-flex: 0 1 50%
+    flex: 0 1 50%
+    max-width: 50%
+    padding-left: 37px
+  &__title
+    font-family: 'Exo 2', sans-serif
+    font-weight: 600
+    font-size: 1.2rem
+    line-height: 140%
+  &__text
+    margin-top: 24px
+    font-weight: 400
+    font-size: 0.9rem
+  &__btn
+    margin-top: 24px
+  &__socials
+    height: 150px
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -moz-box-orient: vertical
+    -moz-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-align: center
+    -webkit-align-items: center
+    -moz-box-align: center
+    -ms-flex-align: center
+    align-items: center
+  &__sub-title
+    white-space: nowrap
+    font-weight: 400
+    display: -webkit-inline-box
+    display: -webkit-inline-flex
+    display: -moz-inline-box
+    display: -ms-inline-flexbox
+    display: inline-flex
+    -webkit-box-align: center
+    -webkit-align-items: center
+    -moz-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    &:before, &::after            /////    *    /////
+      content: ''
+      width: 300px
+      height: 1px
+      background-color: $color-border
+    &::after
+      margin-left: 20px
+    &::before
+      margin-right: 20px
+  &__icons
+    margin-top: 10px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+  &__icon
+    &-link
+      display: block
+      box-sizing: border-box
+      width: 46px
+      height: 46px
+    & svg
+      width: 42px
+      height: 42px
+    &:not(:first-child)
+      margin-left: 24px
+  &__top-btn
+    position: absolute
+    bottom: 0px
+    right: 0px
+    width: 94.7px
+    height: 78px
+    background: $color-lilac
+    -webkit-border-radius: 10px 10px 0px 0px
+    -moz-border-radius: 10px 10px 0px 0px
+    border-radius: 10px 10px 0px 0px
+    & svg
+      width: 32.9px
+      height: 33px
+
+.phone-link
+  font-family: Montserrat
+  font-weight: 500
+  font-size: 12px
+  color: $color-Black
+  outline: none
+
+.work-time
+  font-family: Montserrat
+  font-weight: 500
+  font-size: 12px
+  color: $color-Black
+
+.desknone
+  display: none
+
+
+/* ----------------------- Main ------------------------*/
+
+
+.main
+  & .container-border
+    border-right: none
+  &__body
+    padding-top: 55px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+  &__info
+    margin-top: 120px
+  &__title
+    font-family: 'Exo 2', sans-serif
+    white-space: nowrap
+    font-weight: 600
+    font-size: 62px
+    line-height: 140%
+  &__description
+    font-family: 'Montserrat'
+    font-weight: 400
+    margin-top: 9px
+    font-size: 22px
+    line-height: 140%
+  &__btn
+    margin-top: 12px
+    width: 278px
+    & span
+      font-size: 16px
+  &__picture
+    min-width: 960px
+    min-width: -webkit-calc(960 / 1420 * 100%)
+    min-width: -moz-calc(960 / 1420 * 100%)
+    min-width: calc(960 / 1420 * 100%)
+    height: auto
+    margin-left: -80px
+    position: relative
+    &::after
+      content: ''
+      z-index: 1
+      position: absolute
+      top: 0px
+      left: 280px
+      border: 1px solid #C8C9CD
+      width: 550px
+      height: 550px
+      -webkit-border-radius: 50%
+      -moz-border-radius: 50%
+      border-radius: 50%
+    & .main-picture
+      margin-top: -50px
+      width: 100%
+      -o-object-fit: contain
+      object-fit: contain
+      position: relative
+      z-index: 3
+    & .absolute-picture
+        position: absolute
+        top: 2px
+        right: -40px
+        z-index: 1
+
+
+/* ----------------------- Advantages ------------------------*/
+
+
+.advantages
+  & .container-border
+    border-right: none
+  &__body
+    padding-top: 87px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    width: 100%
+  &__picture
+    width: 504px
+    height: 545px
+    width: -webkit-calc(504 / 1440 * 100%)
+    width: -moz-calc(504 / 1440 * 100%)
+    width: calc(504 / 1440 * 100%)
+    margin-top: 50px
+    margin-left: 50px
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      width: 90%
+      height: 100%
+      top: -50px
+      left: -50px
+      border: 1px solid $color-border
+      -webkit-border-radius: 10px
+      -moz-border-radius: 10px
+      border-radius: 10px
+    & img
+      -webkit-border-radius: 10px
+      -moz-border-radius: 10px
+      border-radius: 10px
+      width: 100%
+      height: 100%
+      -o-object-fit: cover
+      object-fit: cover
+      position: relative
+      z-index: 2
+  &__content
+    margin-left: 126px
+    margin-top: 50px
+    width: -webkit-calc(740 / 1440 * 100%)
+    width: -moz-calc(740 / 1440 * 100%)
+    width: calc(740 / 1440 * 100%)
+    &-block
+      background: $color-lilac
+      -webkit-border-radius: 20px
+      -moz-border-radius: 20px
+      border-radius: 20px
+      padding-left: 20px
+      padding-top: 48px
+      width: 740px
+      width: 100%
+      min-height: 257px
+      position: relative
+      z-index: 2
+  &__title
+    font-family: 'Exo 2', sans-serif
+    font-weight: 600
+    font-size: 2.6rem
+    line-height: 140%
+    color: $color-White
+  &__description
+    font-family: 'Montserrat', sans-serif
+    width: 96%
+    margin-top: 18px
+    text-align: center
+    font-weight: 500
+    font-size: 0.8rem
+    line-height: 140%
+    color: $color-White
+  &__info
+    margin-top: 60px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: center
+    -webkit-justify-content: center
+    -moz-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    &-item
+      display: -webkit-box
+      display: -webkit-flex
+      display: -moz-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-orient: vertical
+      -webkit-box-direction: normal
+      -webkit-flex-direction: column
+      -moz-box-orient: vertical
+      -moz-box-direction: normal
+      -ms-flex-direction: column
+      flex-direction: column
+      -webkit-box-align: start
+      -webkit-align-items: flex-start
+      -moz-box-align: start
+      -ms-flex-align: start
+      align-items: flex-start
+      &:nth-child(1)
+        padding-right: 21px
+      &:nth-child(3)
+        padding-left: 61px
+        height: 354px
+        border-left: 1px solid $color-border
+        border-bottom: 1px solid $color-border
+        position: relative
+        &::after
+          content: ''
+          height: 455px
+          width: 1px
+          position: absolute
+          top: -455px
+          left: 0px
+          background-color: $color-border
+        &::before
+          content: ''
+          height: 1px
+          width: 120px
+          position: absolute
+          bottom: 0px
+          left: 100%
+          background-color: $color-border
+  &__number
+    font-size: 2.7rem
+    font-weight: 500
+  &__advantage
+    margin-top: 10px
+    max-width: 181px
+    font-weight: 500
+    font-size: 1rem
+    line-height: 140%
+
+
+/* ----------------------- Examples ------------------------*/
+
+
+.examples
+  &__body
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -moz-box-orient: vertical
+    -moz-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-align: center
+    -webkit-align-items: center
+    -moz-box-align: center
+    -ms-flex-align: center
+    align-items: center
+  &__title
+    font-family: 'Exo 2', sans-serif
+    font-weight: 600
+    font-size: 43px
+    line-height: 140%
+    text-align: center
+  &__content
+    margin-top: 40px
+    width: 100%
+  &__categories
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: center
+    -webkit-justify-content: center
+    -moz-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+  &__tabs
+    margin-top: 20px
+  &__btn
+    margin-top: 60px
+    font-size: 16px
+
+
+/* ----------------------- Category ------------------------*/
+
+
+.category
+  font-size: 16px
+  color: #C8C9CD
+  height: 102px
+  padding: 0px 45px
+  -webkit-border-radius: 30px
+  -moz-border-radius: 30px
+  border-radius: 30px
+  display: -webkit-inline-box
+  display: -webkit-inline-flex
+  display: -moz-inline-box
+  display: -ms-inline-flexbox
+  display: inline-flex
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -moz-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  position: relative
+  & svg
+    fill: $color-light-lilac
+  &._active
+    padding: 0 68px
+    background-color: $color-lilac
+    & svg
+      fill: $color-White
+  &:not(:last-child)::after
+    content: ''
+    position: absolute
+    top: 18px
+    right: 0px
+    height: 66px
+    width: 1px
+    background-color: $color-border
+
+
+/* ----------------------- Tab ------------------------*/
+
+
+.tab
+  background-color: #f2f2f2
+  display: none
+  &.is-active            /////    *    /////
+    display: none
+    width: 100%
+    display: block
+  &__body
+    -webkit-border-radius: 30px
+    -moz-border-radius: 30px
+    border-radius: 30px
+    overflow: hidden
+    display: grid
+    grid-template-columns: 635px auto auto auto
+    grid-template-rows: 359px 256px
+    grid-template-columns: -webkit-calc(635 / 1420 * 100%) -webkit-calc(301 / 1420 * 100%) -webkit-calc(57 / 1420 * 100%) -webkit-calc(464 / 1420 * 100%)
+    grid-template-columns: -moz-calc(635 / 1420 * 100%) -moz-calc(301 / 1420 * 100%) -moz-calc(57 / 1420 * 100%) -moz-calc(464 / 1420 * 100%)
+    grid-template-columns: calc(560 / 1420 * 100%) calc(370 / 1420 * 100%) calc(30 / 1420 * 100%) calc(464 / 1420 * 100%)
+    grid-template-rows: -webkit-calc(359 / 625 * 100%) -webkit-calc(256 / 625 * 100%)
+    grid-template-rows: -moz-calc(359 / 625 * 100%) -moz-calc(256 / 625 * 100%)
+    grid-template-rows: calc(359 / 625 * 100%) calc(256 / 625 * 100%)
+    row-gap: 10px
+    -webkit-column-gap: 10px
+    -moz-column-gap: 10px
+    column-gap: 10px
+    & :nth-child(1)
+      grid-row: span 2
+    & :nth-child(2) 
+      grid-column: span 2
+    & :nth-child(5) 
+      grid-column: span 2
+  &__picture img
+    width: 100%
+    height: 100%
+    -o-object-fit: cover
+    object-fit: cover
+  &__info
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -moz-box-orient: vertical
+    -moz-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-align: center
+    -webkit-align-items: center
+    -moz-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    -webkit-box-pack: center
+    -webkit-justify-content: center
+    -moz-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    text-align: center
+  &__title
+    font-weight: 600
+    font-size: 1.2rem
+    line-height: 140%
+    font-family: 'Exo 2', sans-serif
+  &__description
+    max-width: 175px
+    margin-top: 20px
+    font-size: 0.9rem
+    line-height: 140%
+  &__btns
+    margin-top: 45px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -moz-box-orient: vertical
+    -moz-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-align: center
+    -webkit-align-items: center
+    -moz-box-align: center
+    -ms-flex-align: center
+    align-items: center
+  &__btn
+    font-family: 'Exo 2', sans-serif
+    margin-top: 15px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -webkit-align-items: center
+    -moz-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    & span
+      white-space: nowrap
+      font-weight: 600
+      font-size: 0.9rem
+    &.prev-category
+      max-width: 240px
+      display: none
+      & span
+        max-width: 220px
+      & svg
+        -webkit-transform: rotate(180deg)
+        -moz-transform: rotate(180deg)
+        -ms-transform: rotate(180deg)
+        -o-transform: rotate(180deg)
+        transform: rotate(180deg)
+        min-width: 25px
+        max-width: 25px
+        margin-right: 13px
+        fill: $color-Black
+    &.next-category svg
+      margin-left: 13px
+      min-width: 25px
+      max-width: 25px
+      fill: $color-Black
+    &:hover svg
+      fill: $color-border 
+    &:active
+      color: $color-border
+      & svg
+        fill: $color-border
+  &._open
+    display: block
+
+
+/*-------------- Banner -----------------*/
+
+
+.banner
+  position: relative
+  min-height: 428px
+  height: auto
+  padding: 20px 0px
+  & .container-border
+    height: 100%
+  &__body
+    background-color: $color-White
+    width: -webkit-calc(1767 / 1920 * 100%)
+    width: -moz-calc(1767 / 1920 * 100%)
+    width: calc(1767 / 1920 * 100%)
+    height: 100%
+    position: absolute
+    top: 0px
+    left: 0px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+  &__picture
+    height: 100%
+    max-width: 786px
+    max-width: -webkit-calc((848 / 1920) * 100%)
+    max-width: -moz-calc((848 / 1920) * 100%)
+    max-width: calc((848 / 1920) * 100%)
+    & img
+      max-width: 100%
+      -o-object-fit: contain
+      object-fit: contain
+  &__info
+    max-width: 578px
+    max-width: -webkit-calc((578/ 1420px) * 100%)
+    max-width: -moz-calc((578/ 1420px) * 100%)
+    max-width: calc((578/ 1420px) * 100%)
+    margin-left: 82px
+    margin-right: 20px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -moz-box-orient: vertical
+    -moz-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-pack: center
+    -webkit-justify-content: center
+    -moz-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+  &__title
+    font-family: 'Exo 2', sans-serif
+    font-weight: 600
+    font-size: 2.3rem
+    line-height: 140%
+  &__description
+    margin-top: 24px
+    font-weight: 500
+    font-size: 1rem
+    line-height: 140%
+  &__btn
+    width: 267px
+    margin-top: 24px
+  &-cost
+    &__wrapper
+      margin-right: 0px
+      padding-top: 63px
+      margin-bottom: 100px
+      display: flex
+      flex-direction: column
+      align-items: center
+    &__header-wrapper
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+    &__header
+      position: relative
+      font-family: 'Exo 2', sans-serif
+      font-weight: 600
+      font-size: 24px
+      line-height: 140%
+      text-align: center
+      &::after
+        position: absolute
+        content: ''
+        width: 50px
+        height: 4px
+        top: 45px
+        right: 98px
+        border-top: 1px solid $color-border
+        border-bottom: 1px solid $color-border
+      &-description
+        display: inline-block
+        width: 100%
+        padding: 0 16px
+        margin-top: 31px
+        text-align: center
+        font-weight: 500
+        font-size: 12px
+        line-height: 15px
+        color: $color-light-lilac
+    &__table
+      margin-bottom: -16px
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
+    &__body
+      padding-top: 30px
+    &__title
+      font-size: 12px
+      font-family: Montserrat
+      font-weight: 600
+      font-style: normal
+      text-align: center
+      margin-bottom: 12px
+      font-family: Montserrat            /////    *    /////
+      font-style: normal
+      font-weight: 600
+      font-size: 14px
+      line-height: 17px
+      text-align: center
+    &__row
+      display: flex
+      flex-wrap: wrap
+      text-align: center
+      align-items: center
+      justify-content: space-around
+    &__col
+      position: relative
+      width: 153px
+      height: 65px
+      margin-bottom: 41px
+      align-items: center
+      &:after            /////    *    /////
+        position: absolute
+        content: ''
+        width: 100px
+        height: 4px
+        top: 64px
+        left: 23px
+        border-top: 1px solid $color-border
+        border-bottom: 1px solid $color-border
+    &__cost
+      font-family: Montserrat
+      font-weight: 600
+      font-style: normal
+      font-size: 16px
+      color: #7A7E8F
+    &__photo-img
+      display: none
+
+.banner-cost__item
+  margin-top: 60px
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  width: 920px
+
+.container-price
+  align-items: center
+
+.banner-cost__cost
+  text-align: center
+  &::after
+    display: block
+    margin-top: 18px
+
+.hide
+  display: none
+
+
+/*-------------- Feedbacks -----------------*/
+
+
+.feedbacks
+  &__body
+    padding-top: 247px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+  &__contect
+    width: 560px
+    padding-left: 20px
+    width: -webkit-calc(560 / 1420 * 100%)
+    width: -moz-calc(560 / 1420 * 100%)
+    width: calc(560 / 1420 * 100%)
+    margin-right: 140px
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: -101px
+      left: -114px
+      width: 723px
+      height: 723px
+      -webkit-border-radius: 50%
+      -moz-border-radius: 50%
+      border-radius: 50%
+      border: 1px solid $color-border
+  &__title
+    position: relative
+    z-index: 3
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -moz-box-orient: vertical
+    -moz-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-align: center
+    -webkit-align-items: center
+    -moz-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    & span
+      -webkit-align-self: flex-start
+      -ms-flex-item-align: start
+      align-self: flex-start
+      font-weight: 600
+      font-size: 22px
+      line-height: 140%
+      font-family: 'Exo', sans-serif
+      padding-bottom: 10px
+    &::after
+      position: absolute
+      content: ''
+      width: 16vw
+      height: 4px
+      top: 67px
+      left: 208px
+      border-top: 1px solid $color-border
+      border-bottom: 1px solid $color-border
+  &__btn
+    position: relative
+    z-index: 3
+  &__picture
+    position: relative
+    &:nth-child(1)
+      width: 627px
+      margin-right: 10px
+      & img
+        max-height: 428px
+    &:nth-child(2)
+      width: 389px
+      & img
+        ax-height: 508px
+    & img
+      position: absolute
+      left: 0px
+      bottom: 0px
+      width: 100%
+      height: auto
+      -o-object-fit: cover
+      object-fit: cover
+  &__pictures
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+
+
+
+.feedback-form
+  transition: all .5s ease
+  opacity: 0
+  visibility: hidden
+  position: fixed
+  z-index: 300
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.7)
+  -webkit-box-pack: center
+  -webkit-justify-content: center
+  -moz-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  overflow: auto
+  &_open
+    transition: all .5s ease
+    display: block
+    opacity: 1
+    visibility: visible
+  & .close-btn
+    position: absolute
+    z-index: 121
+    top: 0px
+    right: 0px
+    padding: 20px 20px
+    & svg
+      width: 30px
+      height: 30px
+      fill: $color-lilac
+  &__body
+    margin: auto
+    width: 624px
+    padding: 40px
+    background-color: $color-White
+    -webkit-box-shadow: 0px 4px 60px rgba(161, 161, 161, 0.2)
+    -moz-box-shadow: 0px 4px 60px rgba(161, 161, 161, 0.2)
+    box-shadow: 0px 4px 60px rgba(161, 161, 161, 0.2)
+    -webkit-border-radius: 30px
+    -moz-border-radius: 30px
+    border-radius: 30px
+    text-align: center
+  &__title
+    font-family: 'Exo 2', sans-serif
+    font-weight: 600
+    font-size: 1.2rem
+    line-height: 140%
+  &__description
+    color: #444444
+    margin-top: 24px
+    font-weight: 400
+    font-size: 0.7rem
+    line-height: 130%
+  &__btn
+    margin-top: 24px
+    text-align: center
+    & button
+      width: 250px
+  & form
+    margin-top: 24px
+    text-align: start
+    & label
+      color: #444444
+      font-weight: 400
+      font-size: 0.7rem
+      line-height: 130%
+    & textarea
+      padding: 40px
+      margin-top: 16px
+      width: 100%
+      height: 168px
+      background-color: $color-White
+      border: 0.8px solid rgba(200, 201, 205, 0.15)
+      -webkit-box-shadow: 0px 4px 10px rgba(161, 161, 161, 0.15)
+      -moz-box-shadow: 0px 4px 10px rgba(161, 161, 161, 0.15)
+      box-shadow: 0px 4px 10px rgba(161, 161, 161, 0.15)
+      -webkit-border-radius: 25px
+      -moz-border-radius: 25px
+      border-radius: 25px
+    & input
+      margin-top: 30px
+      min-width: 250px
+    & .input-email
+      margin-left: 20px
+    & .checkbox-label
+      cursor: pointer
+      position: relative
+      & span
+        margin-top: 24px
+        display: -webkit-inline-box
+        display: -webkit-inline-flex
+        display: -moz-inline-box
+        display: -ms-inline-flexbox
+        display: inline-flex
+        &:before                         /////    *    /////
+          content: ''
+          margin-right: 10px
+          width: 14px
+          height: 14px
+          border: 1px solid $color-border
+    & .input-checkbox
+      position: absolute
+      z-index: -1
+      opacity: 0
+      &:checked~span::before
+        content: url("../img/icons/check.svg")
+        background-color: $color-lilac
+  &._open
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+  &__wrapper-inputs
+    display: flex
+
+.burger__menu
+  top: 0px
+  z-index: 299
+  width: 320px
+  height: 232px
+  padding: 30px 82px
+  background: $color-White
+  border-radius: 30px
+  position: absolute
+  right: 35px
+  transition: .5s all
+  & .burger__button
+    color: $color-Black
+    font-weight: 500
+    font-size: 18px
+    line-height: 140%
+    margin-bottom: 24px
+    &:last-child
+      margin-bottom: 0
+
+
+.close
+  top: -300px
+  
+
+/*-------------- Slider -----------------*/
+
+
+.slider
+  position: relative
+  z-index: 3
+  margin-top: 24px
+  width: 510px
+  height: auto
+  overflow: hidden
+  &__body
+    min-width: 100%
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+  &__item
+    -webkit-box-flex: 0
+    -webkit-flex: 0 0 100%
+    -moz-box-flex: 0
+    -ms-flex: 0 0 100%
+    flex: 0 0 100%
+    max-width: 100%
+    justify-content: center
+    align-items: flex-start
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -moz-box-orient: vertical
+    -moz-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+  &__author
+    font-weight: 600
+    font-size: 0.8rem
+  &__text
+    margin-top: 24px
+    font-weight: 500
+    font-size: 1rem
+    line-height: 140%
+  &__arrows
+    margin-top: 24px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -webkit-align-items: center
+    -moz-box-align: center
+    -ms-flex-align: center
+    align-items: center
+  &__arrow
+    padding: 10px 13px
+    & svg
+      width: 14px
+      height: 27px
+      stroke: $color-Black
+      display: -webkit-box
+      display: -webkit-flex
+      display: -moz-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-align: center
+      -webkit-align-items: center
+      -moz-box-align: center
+      -ms-flex-align: center
+      align-items: center
+    &:hover svg
+      stroke: $color-hover
+    &._unactive
+      pointer-events: none
+      & svg
+        stroke: $color-unactive
+  & .arrow-prev svg
+    -webkit-transform: rotate(180deg)
+    -moz-transform: rotate(180deg)
+    -ms-transform: rotate(180deg)
+    -o-transform: rotate(180deg)
+    transform: rotate(180deg)
+
+
+/*-------------- Materials -----------------*/
+
+
+.materials
+  &__body
+    padding-top: 240px
+  &__title
+    font-family: 'Exo 2', sans-serif
+    font-weight: 600
+    font-size: 2.3rem
+    line-height: 140%
+    max-width: 600px
+    max-height: 100%
+  &__content
+    margin-top: 32px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+  &__form
+    margin-top: 251px
+    margin-right: -50px
+    position: relative
+    z-index: 3
+    width: 548px
+    width: -webkit-calc(548 / 1420 * 100%)
+    width: -moz-calc(548 / 1420 * 100%)
+    width: calc(548 / 1420 * 100%)
+  &__selection-block
+    width: 911px
+    min-height: 1066px
+    width: -webkit-calc(950 / 1420 * 100%)
+    width: -moz-calc(950 / 1420 * 100%)
+    width: calc(950 / 1420 * 100%)
+  &-form__body
+    min-height: 520px
+    background-color: $color-White
+    padding: 61px 106px
+    padding: 61px -webkit-calc(106 / 548 * 100%)
+    padding: 61px -moz-calc(106 / 548 * 100%)
+    padding: 61px calc(106 / 548 * 100%)
+    text-align: center
+    -webkit-box-shadow: 0px 4px 60px rgba(161, 161, 161, 0.2)
+    -moz-box-shadow: 0px 4px 60px rgba(161, 161, 161, 0.2)
+    box-shadow: 0px 4px 60px rgba(161, 161, 161, 0.2)
+    -webkit-border-radius: 30px
+    -moz-border-radius: 30px
+    border-radius: 30px
+    padding: 60px
+  &-form__title
+    font-family: 'Exo 2', sans-serif
+    font-weight: 600
+    font-size: 1.2rem
+    line-height: 140%
+  &-form__description
+    margin-top: 15px
+    font-size: 0.8rem
+    line-height: 145%
+
+.form .input,
+.form button 
+  margin-top: 15px
+  width: 336px
+
+
+/*-------------- Selection -----------------*/
+
+
+.selection
+  &-block
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: -20px
+      right: -250px
+      width: 340px
+      height: 340px
+      -webkit-border-radius: 50%
+      -moz-border-radius: 50%
+      border-radius: 50%
+      border: 1px solid $color-border
+    &__body
+      width: 100%
+      padding-top: 60px
+      border: 1px solid $color-border
+      -webkit-border-radius: 30px
+      -moz-border-radius: 30px
+      border-radius: 30px
+      display: -webkit-box
+      display: -webkit-flex
+      display: -moz-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-orient: vertical
+      -webkit-box-direction: normal
+      -webkit-flex-direction: column
+      -moz-box-orient: vertical
+      -moz-box-direction: normal
+      -ms-flex-direction: column
+      flex-direction: column
+      -webkit-box-align: center
+      -webkit-align-items: center
+      -moz-box-align: center
+      -ms-flex-align: center
+      align-items: center
+      text-align: center
+      padding-bottom: 57px
+    &__title
+      font-family: 'Exo 2', sans-serif
+      font-weight: 600
+      font-size: 1.2rem
+      line-height: 140%
+    &__description
+      max-width: 540px
+      margin-top: 16px
+      font-weight: 400
+      font-size: 0.9rem
+    &-item
+      margin-top: 24px
+      width: 751px
+      width: 100%
+      &._hidden
+        display: none
+      &__title
+        cursor: pointer
+        text-align: start
+        width: 614px
+        width: -webkit-calc(614/ 911 * 100%)
+        width: -moz-calc(614/ 911 * 100%)
+        width: calc(614/ 911 * 100%)
+        font-weight: 400
+        font-size: 0.9rem
+        display: -webkit-inline-box
+        display: -webkit-inline-flex
+        display: -moz-inline-box
+        display: -ms-inline-flexbox
+        display: inline-flex
+        text-transform: uppercase
+        -webkit-box-align: center
+        -webkit-align-items: center
+        -moz-box-align: center
+        -ms-flex-align: center
+        align-items: center
+        position: relative
+        &::after
+          content: ''
+          margin-left: 19px
+          width: 10px
+          height: 10px
+          background: url("../img/icons/small-arrow.svg") no-repeat
+          -webkit-transform: rotate(-90deg)
+          -moz-transform: rotate(-90deg)
+          -ms-transform: rotate(-90deg)
+          -o-transform: rotate(-90deg)
+          transform: rotate(-90deg)
+        &::before
+          content: ''
+          position: absolute
+          bottom: -10px
+          left: 0px
+          width: 100%
+          height: 1px
+          background-color: $color-border
+        &:focus-visible
+          width: 80%
+          height: 40px
+          border: 2px solid $color-Complementary
+          border-radius: 6px
+          transition-duration: 500ms
+      & .slider
+        -webkit-transition: all 0.55s ease 0s
+        -o-transition: all 0.55s ease 0s
+        -moz-transition: all 0.55s ease 0s
+        transition: all 0.55s ease 0s
+        width: 100%
+        padding: 0px 30px
+        margin-top: 24px
+        height: 0px
+        position: relative
+        &__body
+          display: -webkit-box
+          display: -webkit-flex
+          display: -moz-box
+          display: -ms-flexbox
+          display: flex
+          -webkit-transition: all 0.5s ease 0s
+          -o-transition: all 0.5s ease 0s
+          -moz-transition: all 0.5s ease 0s
+          transition: all 0.5s ease 0s
+        &__item
+          -webkit-box-flex: 0
+          -webkit-flex: 0 0 92px
+          -moz-box-flex: 0
+          -ms-flex: 0 0 92px
+          flex: 0 0 92px
+          width: 92px
+          height: 92px
+          position: relative
+          margin: 0px 15px
+        & .selection__scrollbar
+          display: none
+        &__arrow
+          padding: 0px 10px
+          height: 110%
+          background-color: $color-Background
+        & .arrow-next
+          position: absolute
+          z-index: 5
+          top: -5%
+          bottom: 10px
+          right: 0px
+        & .arrow-prev
+          position: absolute
+          z-index: 5
+          top: -5%
+          bottom: 10px
+          left: 0px
+        & .selection-block-item__picture
+          width: 100%
+          height: 100%
+          & img
+            width: 100%
+            height: 100%
+            -o-object-fit: cover
+            object-fit: cover
+        & .selection-block-item__btn
+          position: absolute
+          z-index: 2
+          bottom: 0px
+          left: 0px
+          padding: 10px
+          & svg
+            background: url(../img/icons/Group172.png)
+            pointer-events: none
+            width: 24px
+            height: 24px
+            stroke-width: 2px
+            stroke: $color-White
+      &._open .slider
+        height: 100px
+      &._open .selection-block-item__title::after
+        -webkit-transform: rotate(0deg)
+        -moz-transform: rotate(0deg)
+        -ms-transform: rotate(0deg)
+        -o-transform: rotate(0deg)
+        transform: rotate(0deg)
+      &._open .selection-block-item__title::before
+        display: none
+    &__items
+      margin-top: 4px
+      width: -webkit-calc(751 / 911 * 100%)
+      width: -moz-calc(751 / 911 * 100%)
+      width: calc(751 / 911 * 100%)
+    &__btn
+      & .mat-list-open
+        display: inline
+      & .mat-list-close
+        display: none
+      &._open .mat-list-open
+        display: none
+      &._open .mat-list-close
+        display: inline
+
+
+/*-------------- Chosen -----------------*/
+
+
+.chosen
+  &__body
+    text-align: start
+    margin-top: 60px
+  &__title
+    font-weight: 500
+    font-size: 1rem
+    line-height: 140%
+  &__scrollbar
+    width: 151px
+    margin-top: 24px
+    &._hidden
+      display: none
+  &__total
+    margin-top: 42px
+    margin-right: -70px
+    margin-right: -webkit-calc(-70 / 911 * 100%)
+    margin-right: -moz-calc(-70 / 911 * 100%)
+    margin-right: calc(-70 / 911 * 100%)
+    text-align: end
+    font-weight: 600
+    font-size: 0.9rem
+    font-family: 'Exo 2', sans-serif
+  &-slider
+    margin-top: 24px
+    width: 546px
+    overflow: hidden
+    &__body
+      display: -webkit-inline-box
+      display: -webkit-inline-flex
+      display: -moz-inline-box
+      display: -ms-inline-flexbox
+      display: inline-flex
+      width: auto
+    &__item:not(:first-child)
+      margin-left: 24px
+    &__btn
+      position: absolute
+      bottom: 0px
+      left: 0px
+      padding: 10px
+      & svg
+        background: url(../img/icons/Group149.png)
+        pointer-events: none
+        width: 24px
+        max-height: 3px
+        stroke-width: 2px
+        stroke: $color-White
+    &__title
+      font-weight: 400
+      text-transform: uppercase
+      font-size: 0.9rem
+    &__content
+      margin-top: 12px
+      width: auto
+      display: -webkit-box
+      display: -webkit-flex
+      display: -moz-box
+      display: -ms-flexbox
+      display: flex
+    &__chosen-item
+      position: relative
+      &:not(:first-child)
+        margin-left: -40px
+
+
+/*-------------- Inputs settings -----------------*/
+
+
+input[type=range] 
+  width: 100%
+  margin: 2px 0
+  background-color: transparent
+  -webkit-appearance: none
+
+input::placeholder
+  color: #C8C9CD
+
+input[type=range]:focus 
+  outline: none
+
+
+input[type=range]::-webkit-slider-runnable-track 
+  background: $color-lilac
+  border: 0
+  -webkit-border-radius: 14.3px
+  border-radius: 14.3px
+  width: 100%
+  height: 4px
+  cursor: pointer
+
+
+input[type=range]::-webkit-slider-thumb 
+  margin-top: -2px
+  width: 24px
+  height: 10px
+  background: $color-hover
+  border: 0
+  -webkit-border-radius: 50px
+  border-radius: 50px
+  cursor: pointer
+  -webkit-appearance: none
+
+
+input[type=range]:focus::-webkit-slider-runnable-track 
+  background: $color-lilac
+
+
+input[type=range]::-moz-range-track 
+  background: $color-lilac
+  border: 0
+  -moz-border-radius: 14.3px
+  border-radius: 14.3px
+  width: 100%
+  height: 4px
+  cursor: pointer
+
+
+input[type=range]::-moz-range-thumb 
+  width: 24px
+  height: 10px
+  background: $color-hover
+  border: 0
+  -moz-border-radius: 50px
+  border-radius: 50px
+  cursor: pointer
+
+
+input[type=range]::-ms-track 
+  background: transparent
+  border-color: transparent
+  border-width: 2px 0
+  color: transparent
+  width: 100%
+  height: 4px
+  cursor: pointer
+
+
+input[type=range]::-ms-fill-lower 
+  background: $color-lilac
+  border: 0
+  border-radius: 28.6px
+
+
+input[type=range]::-ms-fill-upper 
+  background: $color-lilac
+  border: 0
+  border-radius: 28.6px
+
+
+input[type=range]::-ms-thumb 
+  width: 24px
+  height: 10px
+  background: $color-hover
+  border: 0
+  border-radius: 50px
+  cursor: pointer
+  margin-top: 0px
+  /*Needed to keep the Edge thumb centred*/
+
+
+input[type=range]:focus::-ms-fill-lower 
+  background: $color-lilac
+
+
+input[type=range]:focus::-ms-fill-upper 
+  background: $color-lilac
+
+
+/*-------------- Other -----------------*/
+
+
+.feedbacks__btn .button-3
+  font-weight: 400
+  font-size: inherit
+
+body._block
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+.wrapper
+  position: relative
+  overflow: hidden
+  width: 100%
+  min-height: 100%
+  background-color: $color-Background
+
+.container
+  margin: 0 auto
+  max-width: 1420px
+  width: 96%
+
+.container-border 
+  width: 100%
+  margin: 0 auto
+  max-width: 1616px
+  border-left: 2px solid $color-border
+  border-right: 2px solid $color-border
+
+html 
+  font-size: 18px
+
+li,
+svg,
+button 
+  -webkit-transition: all 0.5s ease 0s
+  -o-transition: all 0.5s ease 0s
+  -moz-transition: all 0.5s ease 0s
+  transition: all 0.5s ease 0s
+
+@import "_media.sass"
